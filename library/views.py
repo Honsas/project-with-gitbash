@@ -1,5 +1,6 @@
 from library.forms import IssueBookForm
 from django.shortcuts import redirect, render,HttpResponse
+from django.shortcuts import render,HttpResponse
 from .models import *
 from .forms import IssueBookForm
 from django.contrib.auth import authenticate, login, logout
@@ -9,6 +10,9 @@ from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request, "index.html")
+
+def index(request):
+    return render(request,"This is a index page")    
 
 @login_required(login_url = '/admin_login')
 def add_book(request):
